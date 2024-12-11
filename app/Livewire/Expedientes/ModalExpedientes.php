@@ -10,7 +10,7 @@ use Livewire\Component;
 class ModalExpedientes extends Component
 {
     public $modalVisible = false;
-    public $id_cliente;
+    public $cliente_id;
     public $expediente_id = null;
     public $expediente;
 
@@ -30,7 +30,7 @@ class ModalExpedientes extends Component
             'fecha' => 'required|date',
             'estadoExpediente' => 'required|in:Pendiente,En Proceso,Completado,Cancelado',
             'costo' => 'required|numeric|min:0',
-            'id_cliente' => 'required|integer',
+            'cliente_id' => 'required|integer',
         ];
 
         return $rules;
@@ -38,7 +38,7 @@ class ModalExpedientes extends Component
 
     public function mount($clienteId = null)
     {
-        $this->id_cliente = $clienteId;
+        $this->cliente_id = $clienteId;
         $this->fecha = now()->format('Y-m-d'); // Establece la fecha actual por defecto
     }
 
@@ -73,7 +73,7 @@ class ModalExpedientes extends Component
             'fecha' => $this->fecha,
             'estadoExpediente' => $this->estadoExpediente,
             'costo' => $this->costo,
-            'id_cliente' => $this->id_cliente,
+            'cliente_id' => $this->cliente_id,
         ];
 
         if ($this->expediente_id) {

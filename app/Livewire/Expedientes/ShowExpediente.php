@@ -18,11 +18,11 @@ class ShowExpediente extends Component
     public $perPage = 10;
 
     // Recibe el parámetro de la ruta
-    public function mount($hash, $id_cliente)
+    public function mount($hash, $cliente_id)
     {
         $id = Expediente::decodeHash($hash);
         $this->expedienteId = $id;
-        $this->cliente = Cliente::findOrFail($id_cliente);
+        $this->cliente = Cliente::findOrFail($cliente_id);
         $this->expediente = Expediente::findOrFail($id);
     }
 
