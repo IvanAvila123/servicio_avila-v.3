@@ -12,7 +12,7 @@
             <!-- Selector de registros por página -->
             <div class="relative">
                 <select wire:model.live="perPage"
-                    class="w-full px-4 py-2 text-gray-200 bg-gray-800 border border-gray-700 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option>10 por página</option>
                     <option>25 por página</option>
                     <option>50 por página</option>
@@ -26,7 +26,7 @@
         <!-- Botón de columnas -->
         <div class="relative" x-data="{ open: false }">
             <button @click="open = !open"
-                class="px-4 py-2 text-gray-200 bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                class="px-4 py-2 text-gray-800 bg-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 COLUMNAS
             </button>
             <div x-show="open" @click.away="open = false"
@@ -130,38 +130,38 @@
             </thead>
             <tbody class="divide-y divide-gray-800">
                 @forelse ($clientes as $cliente)
-                    <tr class="hover:bg-gray-800/50">
+                    <tr class="hover:bg-gray-300/50 dark:hover:bg-gray-800/50 ">
                         <td class="px-6 py-4">
                             <input type="checkbox" value="{{ $cliente->id }}" wire:model.live="selected"
                                 class="text-blue-500 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600 focus:ring-blue-500">
                         </td>
 
                         @if ($columns['nombre'])
-                            <td class="px-6 py-4 text-sm text-gray-300 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-gray-300">
                                 {{ $cliente->nombre }}
                             </td>
                         @endif
 
                         @if ($columns['apellido'])
-                            <td class="px-6 py-4 text-sm text-gray-300 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-gray-300">
                                 {{ $cliente->apellido }}
                             </td>
                         @endif
 
                         @if ($columns['telefono'])
-                            <td class="px-6 py-4 text-sm text-gray-300 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-gray-300">
                                 {{ $cliente->telefono }}
                             </td>
                         @endif
 
                         @if ($columns['email'])
-                            <td class="px-6 py-4 text-sm text-gray-300 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-gray-300">
                                 {{ $cliente->email }}
                             </td>
                         @endif
 
                         @if ($columns['estado'])
-                            <td class="px-6 py-4 text-sm text-gray-300 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-gray-300">
                                 <span
                                     class="px-2 py-1 text-xs font-semibold leading-5 rounded-full
                                     {{ $cliente->estado === 'Pendiente' ? 'bg-yellow-900 text-yellow-200' : '' }}

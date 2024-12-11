@@ -11,10 +11,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('clientes', 'clientes')->name('clientes');
 
     // Rutas de expedientes
-    Route::get('/clientes/{id_cliente}/expedientes', ShowExpedientes::class)
+    Route::get('/clientes/{cliente_id}/expedientes', ShowExpedientes::class)
         ->name('expedientes.show');
 
-        Route::get('/expedientes/{hash}/{id_cliente}', ShowExpediente::class)
+        Route::get('/expedientes/{hash}/{cliente_id}', ShowExpediente::class)
         ->name('expediente');
 });
 

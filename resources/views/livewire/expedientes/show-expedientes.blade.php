@@ -53,7 +53,7 @@
                 <div class="p-6">
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         @forelse($expedientes as $expediente)
-                            <a href="{{ route('expediente', ['hash' => $expediente->hash_id, 'id_cliente' => $cliente->id]) }}" wire:navigate
+                            <a href="{{ route('expediente', ['hash' => $expediente->hash_id, 'cliente_id' => $cliente->id]) }}" wire:navigate
                                 class="relative group overflow-hidden p-4 rounded-lg bg-gray-800 dark:bg-gray-700
                                       before:absolute
                                       before:inset-0

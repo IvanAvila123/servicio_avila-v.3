@@ -14,9 +14,9 @@ class ShowExpedientes extends Component
     public $search = '';
     public $perPage = 10;
 
-    public function mount($id_cliente)
+    public function mount($cliente_id)
     {
-        $this->cliente = Cliente::findOrFail($id_cliente);
+        $this->cliente = Cliente::findOrFail($cliente_id);
     }
 
     public function updatingSearch()

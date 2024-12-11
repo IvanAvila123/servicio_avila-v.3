@@ -18,7 +18,7 @@ class Cliente extends Model
 
     public function expedientes()
     {
-        return $this->hasMany(Expediente::class, 'id_cliente');
+        return $this->hasMany(Expediente::class, 'cliente_id');
     }
 
     public function getHashIdAttribute()

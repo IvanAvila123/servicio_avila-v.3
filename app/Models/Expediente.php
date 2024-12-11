@@ -26,8 +26,8 @@ class Expediente extends Model
         'estadoExpediente',
         'deleted_at',
         'order',
-        'id_cliente',
-        'id_inventarios',
+        'cliente_id',
+        'inventario_id',
     ];
 
     protected $casts = [
@@ -36,12 +36,12 @@ class Expediente extends Model
 
     public function cliente()
     {
-        return $this->belongsTo(Cliente::class, 'id_cliente');
+        return $this->belongsTo(Cliente::class, 'cliente_id');
     }
 
     public function inventario()
     {
-        return $this->belongsTo(Inventario::class, 'id_inventarios');
+        return $this->belongsTo(Inventario::class, 'inventario_id');
     }
 
     public function getHashIdAttribute()

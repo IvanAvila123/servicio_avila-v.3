@@ -39,7 +39,7 @@
 
             <div class="mt-4">
                 <x-input-label for="estado" value="{{ __('Estado') }}" />
-                <select id="estado" class="block w-full mt-1 bg-gray-700 border-gray-300 rounded-md shadow-sm dark:border-gray-700" wire:model.defer="estado">
+                <select id="estado" class="block w-full mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm dark:border-gray-700" wire:model.defer="estado">
                     <option value="">Seleccione un estado</option>
                     <option value="Pendiente">Pendiente</option>
                     <option value="Completado">Completado</option>
