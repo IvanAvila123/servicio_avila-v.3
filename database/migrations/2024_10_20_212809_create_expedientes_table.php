@@ -12,33 +12,29 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('expedientes', function (Blueprint $table) {
-            Schema::create('expedientes', function (Blueprint $table) {
-                $table->id();
-                $table->foreignId('cliente_id')
-                    ->constrained('clientes')
-                    ->onDelete('cascade');
-                $table->foreignId('inventario_id')
-                    ->nullable()
-                    ->constrained('inventarios')
-                    ->onDelete('set null');
-                $table->string('equipo');
-                $table->text('problema');
-                $table->date('fecha');
-                $table->text('observacion')->nullable();
-                $table->decimal('costo', 10, 2)->default(0);
-                $table->string('pdf')->nullable();
-                $table->enum('estadoExpediente', [
-                    'Pendiente',
-                    'En Proceso',
-                    'Completado',
-                    'Cancelado'
-                ])->default('Pendiente');
-                $table->integer('order')->default(0);
-                $table->timestamps();
-                $table->softDeletes();
-            });
-
-            $table->foreignId('id_cliente')->constrained()->onDelete('cascade');
+            $table->id();
+            $table->foreignId('cliente_id')
+                ->constrained('clientes')
+                ->onDelete('cascade');
+            $table->foreignId('inventario_id')
+                ->nullable()
+                ->constrained('inventarios')
+                ->onDelete('set null');
+            $table->string('equipo');
+            $table->text('problema');
+            $table->date('fecha');
+            $table->text('observacion')->nullable();
+            $table->decimal('costo', 10, 2)->default(0);
+            $table->string('pdf')->nullable();
+            $table->enum('estadoExpediente', [
+                'Pendiente',
+                'En Proceso',
+                'Completado',
+                'Cancelado'
+            ])->default('Pendiente');
+            $table->integer('order')->default(0);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
