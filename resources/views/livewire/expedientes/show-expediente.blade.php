@@ -2,7 +2,7 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
-                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="p-6">
                     <div class="flex justify-between">
                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
                             {{ $cliente->nombre }} {{ $cliente->apellido }}
@@ -11,13 +11,18 @@
                         <p class="text-gray-600 dark:text-gray-400">Fecha de creacion:
                             {{ $expediente->fecha->format('d/m/Y') }}</p>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <p class="text-gray-600 dark:text-gray-400 mt-4">{{ $cliente->direccion }}</p>
+                    <div class="flex justify-between items-center gap-4 px-4">
+                        <p class="text-gray-600 dark:text-gray-400 mt-4 pr-4 border-r border-gray-400 h-8">
+                            {{ $cliente->direccion }}
+                        </p>
 
-                        <p class="text-gray-600 dark:text-gray-400 mt-4">{{ $cliente->telefono }}</p>
+                        <p class="text-gray-600 dark:text-gray-400 mt-4 pr-4 border-r border-gray-400 h-8">
+                            {{ $cliente->telefono }}
+                        </p>
 
-                        <p class="text-gray-600 dark:text-gray-400 mt-4">{{ $cliente->email }}</p>
-
+                        <p class="text-gray-600 dark:text-gray-400 mt-4">
+                            {{ $cliente->email }}
+                        </p>
                     </div>
 
                     <div class="flex justify-between mt-4">
@@ -40,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="p-6 border-b border-gray-300 dark:border-gray-700">
                     <x-primary-button>Crear Reporte</x-primary-button>
 
                     <x-secondary-button>Orden servicio</x-secondary-button>
@@ -50,24 +55,27 @@
                     <div class="flex justify-between">
                         <div>
                             <h1 class="text-black dark:text-white">Equipo:</h1>
-                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $expediente->equipo }}</h2>
+                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                                {{ $expediente->equipo }}</h2>
                         </div>
 
                         <div>
                             <h1 class="text-black dark:text-white">Problema:</h1>
-                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $expediente->problema }}</h2>
+                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                                {{ $expediente->problema }}</h2>
                         </div>
 
                         <div>
                             <h1 class="text-black dark:text-white">Observacion:</h1>
-                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $expediente->observacion }}</h2>
+                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                                {{ $expediente->observacion }}</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-6 mt-11">
                     <div class="flex justify-between">
-                       
+
                     </div>
                 </div>
             </div>
